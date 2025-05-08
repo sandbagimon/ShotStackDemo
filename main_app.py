@@ -102,8 +102,8 @@ def get_render_status(api_key_to_use, render_id):
         return None
 
 # --- Streamlit App Interface ---
-st.set_page_config(page_title="Shotstack Video Editor (Stage)", layout="wide")
-st.title("🎬 Shotstack Video Customization Tool (Stage)")
+st.set_page_config(page_title=" Video Editor (Stage)", layout="wide")
+st.title("🎬 Video Customization Tool (Stage)")
 
 # Initialize session state for form fields using ORIGINAL_DEFAULT_MERGE_FIELDS placeholders
 for field_data in ORIGINAL_DEFAULT_MERGE_FIELDS:
