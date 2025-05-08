@@ -309,4 +309,4 @@ elif st.session_state.last_status == "failed":
 
 # --- Footer ---
 st.markdown("---")
-st.caption("Shotstack Streamlit Video Editor (Stage Environment)")
+st.caption("Video Editor (Stage Environment)")
