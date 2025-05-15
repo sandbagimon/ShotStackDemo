@@ -263,8 +263,8 @@ def get_render_status(api_key_to_use, render_id):
 
 
 # --- Streamlit App Interface ---
-st.set_page_config(page_title="AI Video Editor (OpenAI TTS + Supabase)", layout="wide")
-st.title("🎬 AI Video Customization Tool (Gemini & OpenAI TTS & Supabase)")
+st.set_page_config(page_title="AI Video Editor", layout="wide")
+st.title("🎬 AI Video Customization Tool")
 
 # Initialize session state
 for field_data in ORIGINAL_DEFAULT_MERGE_FIELDS:
@@ -290,11 +290,11 @@ st.sidebar.header("API Configuration (Stage)")
 st.session_state.template_id = st.sidebar.text_input("Shotstack Template ID", value=st.session_state.template_id)
 st.session_state.owner_id = st.sidebar.text_input("Shotstack Owner ID", value=st.session_state.owner_id)
 
-st.sidebar.subheader("Gemini (Script Generation)")
+st.sidebar.subheader("Gemini ")
 if GEMINI_API_KEY_ENV:
-    st.sidebar.success("Gemini API Key loaded from .env.")
+    st.sidebar.success("API Key loaded from .env.")
 else:
-    st.sidebar.warning("Gemini API Key missing from .env. Please set it for script generation.")
+    st.sidebar.warning("API Key missing from .env. ")
 
 TARGET_VIDEO_DURATION_SECONDS = st.sidebar.number_input("Target Video Duration (s)", min_value=5, max_value=300,
                                                         value=TARGET_VIDEO_DURATION_SECONDS, step=5,
@@ -305,11 +305,11 @@ GEMINI_MODEL_NAME = st.sidebar.selectbox("Gemini Model",
                                          options=["gemini-2.5-pro-preview-05-06","gemini-1.5-flash-latest", "gemini-1.0-pro-latest", "gemini-pro"],
                                          index=0, key="gemini_model_sb")
 
-st.sidebar.subheader("OpenAI TTS (Narration)")
+st.sidebar.subheader("OpenAI ")
 if OPENAI_API_KEY_ENV:
     st.sidebar.success("OpenAI API Key loaded from .env.")
 else:
-    st.sidebar.warning("OpenAI API Key missing from .env. Please set it for narration.")
+    st.sidebar.warning("OpenAI API Key missing from .env. ")
 
 SELECTED_OPENAI_TTS_VOICE = st.sidebar.selectbox(
     "OpenAI TTS Voice",
