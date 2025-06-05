@@ -96,7 +96,7 @@ def log_message(message, level="info", source="APP_MAIN"):
 
 # --- LLM and TTS Functions ---
 def generate_script_with_gemini(api_key_gemini, description, target_duration_seconds, words_per_second,
-                                model_name="gemini-2.5-pro-preview-05-06"):
+                                model_name="gemini-1.5-flash-latest"):
     log_message(f"Generating script for HeyGen Avatar (target: {target_duration_seconds}s).", "info", "GEMINI")
     if not api_key_gemini:
         st.error("Gemini API Key is missing.");
@@ -381,7 +381,7 @@ TARGET_VIDEO_DURATION_SECONDS = st.sidebar.number_input("Target Avatar Script Du
                                                         key="target_dur_sb_sdk2")
 WORDS_PER_SECOND_ESTIMATE = st.sidebar.number_input("Words Per Second (Avatar Rate)", min_value=1.5, max_value=4.0,
                                                     value=WORDS_PER_SECOND_ESTIMATE, step=0.1, key="wps_sb_sdk2")
-GEMINI_MODEL_NAME = st.sidebar.selectbox("Gemini Model", options=["gemini-2.5-pro-preview-05-06"], index=0,
+GEMINI_MODEL_NAME = st.sidebar.selectbox("Gemini Model", options=["gemini-1.5-flash-latest"], index=0,
                                          key="gemini_model_sb_sdk2")
 
 st.sidebar.subheader("OpenAI TTS (Optional BG Narration)")
